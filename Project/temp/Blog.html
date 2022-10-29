@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'image/tab_logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/blog.style.css' %}">
+    <title>Blog</title>
+</head>
+<body>
+    <div class="main">
+		<div class="navbar">
+			<img src="{% static 'image/Space_Age_logo.png' %}" class="logo">
+			<nav>
+				<ul>
+					<li><a href="{% url 'Home' %}" class="home">Home</a></li>
+					<li><a href="{% url 'About' %}" class="about">About</a></li>
+					<li><a href="{% url 'Blog' %}" class="blog">Blog</a></li>
+					<li><a href="{% url 'gallery' %}" class="gallery">Gallery</a></li>
+					<li><a href="{% url 'tour' %}" class="tour">Tour</a></li>
+					<li><a href="{% url 'account' %}" class="account">Account</a></li>
+				</ul>
+			</nav>
+		</div>
+		{% for data in blog_data reversed %}
+			<div class="content">
+				<div class="article">
+					<div class="title">
+						{{data.title}}
+					</div>
+					<div class="writtenby">
+						posted by: {{data.username}}
+					</div>
+					<div class="body">{{data.body}}
+					</div>
+				</div>
+			</div>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+		{% endfor %}
+	</div>
+	<button class="up" onclick="scrollWin()">
+	</button>
+</body>
+<script>
+	function scrollWin() {
+		  window.scrollTo(0, 0);
+		}
+</script>
+</html>

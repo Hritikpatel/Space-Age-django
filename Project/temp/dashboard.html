@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'image/tab_logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.style.css' %}">
+	<title>
+		Space Reach
+	</title>
+</head>
+<body onload="print()">
+	<div class="main">
+		<div class="navbar">
+			<img src="{% static 'image/Space_Age_logo.png' %}" class="logo">
+			<nav>
+				<ul>
+					<li><a href="{% url 'Home' %}" class="home">Home</a></li>
+					<li><a href="{% url 'About' %}" class="about">About</a></li>
+					<li><a href="{% url 'Blog' %}" class="blog">Blog</a></li>
+					<li><a href="{% url 'gallery' %}" class="gallery">Gallery</a></li>
+					<li><a href="{% url 'tour' %}" class="tour">Tour</a></li>
+					<li><a href="{% url 'account' %}" class="account">Account</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="content">
+			<div class="user_name">
+				Welcome {{data.fullname}}
+			</div>
+			<div class="actions">
+				<button class="tab">
+					<a href="#info">
+						<br>Personal info<br>
+						<div class="detail">Provide personal details and how we can reach you</div>
+					</a>
+				</button>
+				<button class="tab">
+					<a href="#security">
+						<br>Login & security<br>
+						<div class="detail">Update your password and secure your account</div>
+					</a>
+				</button>
+				<button class="tab">
+					<a href="#payment">
+						<br>Travel History<br>
+						<div class="detail">Review tours, payments, and taxes</div>
+					</a>
+				</button>
+			</div>
+			<div class="actions">
+				<button class="tab">
+					<a href="#work">
+						<br>Book a Trip<br>
+						<div class="detail">Book your next trip to space</div>
+					</a>
+				</button>
+				<button class="tab">
+					<a href="#blog">
+						<br>Write a Blog<br>
+						<div class="detail">Provide you expriance by writing a blog post</div>
+					</a>
+				</button>
+				<button class="tab">
+					<a href="#contact">
+						<br>Contact Us<br>
+						<div class="detail">Get your problem, enquiry solved<br>Talk to associate</div>
+					</a>
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="sec" id="info">
+		<div class="form">
+			<form action="{% url 'req' %}" class="--info" method="post">
+				<input type="hidden" value="{{data.id}}" name="id"> 
+				<label for="Name">Name</label><br>
+					<input type="text" placeholder="{{data.fullname}}" name = "usrname" value="{{data.fullname}}"><br>
+				<label for="gender">Gender</label><br>
+					<select name="gender" aria-valuetext="{{data.gender}}">
+						<option value="other">Other</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select><br><br>
+				<label for="email">Email address</label><br>
+					<input type="Email" placeholder="{{data.email}}" name = "email" value="{{data.email}}"><br>
+				<label for="phone">Phone number</label><br>
+					<input type="phone" placeholder="{{data.phn_no}}" name = "phone" value="{{data.phn_no}}"><br>
+				<label for="">Address</label><br>
+					<input type="text" placeholder="{{data.address}}" name = "address" value="{{data.address}}"><br>
+				<label for="emergency">Emergency Contact</label><br>
+					<input type="text" placeholder="{{data.emergency_number}}" name="emrcontact" value="{{data.emergency_number}}"><br>
+				<label for="gov_id">Government ID</label><br>
+					<input type="text" placeholder="{{data.gov_id}}" name="govid" value="{{data.gov_id}}"><br>
+				<button type="submit" class="btn" name="SubmitBtn" value="profupdate">Update</button>
+			</form>
+		</div>
+	</div>
+	<div class="sec" id="security">
+		<div class="form --security">
+			<form class="--info" action="{% url 'req' %}" method="post" onsubmit="return validateform()" name="SecurityForm">
+				<input type="hidden" value="{{data.id}}" name="id"> 
+				<label for="User Id">User ID</label><br>
+					<input type="text" placeholder="User ID" name="user_id"><br>
+				<label for="pass">Current Password</label><br>
+					<input type="password" placeholder="CurrentPass" name="CurrentPass"><br>
+				<label for="newpass">New Password</label><br>
+					<input type="password" placeholder="New Password" name="pas"><br>
+				<label for="confirmpass">Confirm Password</label><br>
+					<input type="password" placeholder="Confirm Password" name="conpass"><br>
+				<button type="submit" class="btn" name="SubmitBtn" value="passupdate">Save</button>
+			</form>
+		</div>
+	</div>
+	<div class="sec" id="payment">
+		<div class="form --payment">
+			Tour History
+			<div class="pay_info">
+				<table>
+					<tr>
+						<th>
+							Date
+						</th>
+						<th>
+							Tourist
+						</th>
+						<th>
+							Package
+						</th>
+						<th>
+							Class
+						</th>
+						<th>
+							Trans Id
+						</th>
+						<th>
+							Status
+						</th>
+						<th>
+							Amount
+						</th>
+					</tr>
+						{% for data in booking_data %}
+						
+							<tr>
+								<td>
+									{{data.date}}
+								</td>
+								<td>
+									{{data.name}}
+								</td>
+								<td>
+									{{data.pkgname}}
+								</td>
+								<td>
+									{{data.level}}
+								</td>
+								<td>
+									{{data.trans_id}}
+								</td>
+								<td>
+									{{data.tripstatus}}
+								</td>
+								<td>
+									{{data.cost}}
+								</td>
+							</tr>
+						{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="sec" id="work">
+		<div class="sec" id="work">
+			<div class="form --work">
+				<form name = "booking" id="admin" class="input-group" method="post" action="{% url 'req' %}" onsubmit="check_cost()">
+					<input type="hidden" name="email" value="{{data.email}}">
+					<input type="hidden" name="id" value="{{data.id}}">
+					<input type="hidden" name="trans_id" value="" id="trans_id">
+					<input type="hidden" name="cost" value="" id="cost">
+					<label>Full Name</label><br>
+					<input type="text" placeholder="Name" name="name"><br>
+					<label>Contact Info</label><br>
+					<input type="text" placeholder="Contact Info" name="contactinfo"><br>
+					<label>Tour Package</label><br>
+					<select name="package">
+						<option>Package</option>
+						<option value="Neighbor Trip">Neighbor Trip</option>
+						<option value="Astro Trip">Astro Trip</option>
+						<option value="Deepspace Trip">Deepspace Trip</option>
+						<option value="Research Trip">Research Trip</option>
+					</select><br>
+					<label>Tour Class</label>
+					<select name="level">
+						<option>Level</option>
+						<option value="Prime">Prime</option>
+						<option value="Duplex">Duplex</option>
+						<option value="Solo">Solo</option>
+					</select><br>
+					<label>Date</label><br>
+					<input type="month" placeholder="Preferred Month" name="date"><br>
+				<button type="submit" class="btn" name="SubmitBtn" value="tour">Save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="sec" id="blog">
+		<div class="form --blog">
+			<form method="post" action="{% url 'req' %}">
+			Write a Blog<br><br>
+				<label>Title</label><br>
+				<input type="text" placeholder="Title of blog" name="title" required><br>
+				<input type ="hidden" value="{{data.fullname}}" name = "username"> 
+				<label>Blog</label><br>
+				<textarea rows="14" cols="65" placeholder="Write your blog..." name="body" required></textarea>
+				<button type="submit" class="btn" name="SubmitBtn" value="blog">Save</button>
+			</form>
+		</div>
+	</div>
+	<div class="sec" id="contact">
+		<div class="sec" id="security">
+			<div class="form --security">
+				<form action="{% url 'req' %}" method="post">
+					<label>Full Name</label><br>
+					<input type="text" placeholder="Name"><br>
+					<label>Contact info</label><br>
+					<input type="email" placeholder="Email"><br>
+					<label>Your Concern</label><br>
+					<textarea rows="10" cols="45" placeholder="Write your concerns..."></textarea>
+					<button type="submit" class="btn" name="SubmitBtn" value="contact">Save</button>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="links">
+		<a href="#" class="mata">Mataverse</a>
+		<a href="#" class="unreal">Unreal</a>
+		<a href="#" class="deeplink">DeepLink</a>
+	</div>
+		<button class="up" onclick="scrollWin()">
+		</button>
+	<script>
+		function scrollWin() {
+		  window.scrollTo(0, 0);
+		}
+		function validateform(){
+			var password=document.SecurityForm.pas.value;
+			var conpass=document.SecurityForm.conpass.value;
+			console.log(password,onpass)
+			if(password!=conpass){  
+				alert("Password not matched");  
+				return false;  
+			}
+		}
+		function check_cost() {
+			var pkg = document.booking.package.value;
+			var string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+			let OTP = '';
+			
+			for (let i = 0; i < 10; i++ ) {
+				OTP += string[Math.floor(Math.random() * string.length)];
+			}
+			document.getElementById("trans_id").value = OTP;
+			if (pkg == "Neighbor Trip") {
+				document.getElementById("cost").value = "10,000 ₿";
+			} 
+			else if(pkg == "Astro Trip") {
+			document.getElementById("cost").value = "50,000 ₿";
+			}
+			else if(pkg == "Deepspace Trip") {
+			document.getElementById("cost").value = "5,00,000 ₿";
+			}
+			else if(pkg == "Research Trip") {
+			document.getElementById("cost").value = "50,00,000 ₿";
+			}
+		}
+		function print() {
+			console.log("user id: {{data.id}}")
+			console.log("Email: {{data.email}}")
+			console.log("Name: {{data.fullname}}")
+			console.log("{{data.phn_no}}")
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'image/tab_logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/gallery.style.css' %}">
+	<title>
+		Space Age Gallery
+	</title>
+</head>
+<body>
+	<div class="main">
+		<div class="navbar" id="navbar">
+			<img src="{% static 'image/Space_Age_logo.png' %}" class="logo">
+			<nav>
+				<ul>
+					<li><a href="{% url 'Home' %}" class="home">Home</a></li>
+					<li><a href="{% url 'About' %}" class="about">About</a></li>
+					<li><a href="{% url 'Blog' %}" class="blog">Blog</a></li>
+					<li><a href="{% url 'gallery' %}" class="gallery">Gallery</a></li>
+					<li><a href="{% url 'tour' %}" class="tour">Tour</a></li>
+					<li><a href="{% url 'account' %}" class="account">Account</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="content">
+				<h1>Views from our most<br>Recent Tour.</h1>
+				<p>Photos are unforgetable and Immortal Memories.</p>
+		</div>
+		<div class="scrollme">
+			<svg width="30px" height="20px">
+			<path stroke="#ffffff" stroke-width="2px" d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "></path>
+			</svg>
+		</div>
+		<div class="links">
+			<a href="#" class="mata">Mataverse</a>
+			<a href="#" class="unreal">Unreal</a>
+			<a href="#" class="deeplink">DeepLink</a>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h2>Tour Red</h2>
+				<p id="red">This was 1 month tour to MARS<br><br>from North Base.<br><br>with 16 Tourists and 7 Crew members it visited Mars colony.</p>
+				<div class="btn">
+					<button>Know More</button>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card card1">
+				</div>
+				<div class="card card2">
+				</div>
+				<div class="card card3">
+				</div>
+				<div class="card card4">
+				</div>
+			</div>
+		</div>
+		<div class="row2">
+			<div class="col">
+				<div class="card card5">
+				</div>
+				<div class="card card6">
+				</div>
+				<div class="card card7">
+				</div>
+				<div class="card card8">
+				</div>
+			</div>
+			<div class="col">
+				<h2>Lunar Tour</h2>
+				<p id="red">This was 1 month tour to MOON<br><br>from Atlantic Base.<br><br>with 50 Tourists and 15 Crew members.</p>
+				<div class="btn">
+					<button>Know More</button>
+				</div>
+			</div>
+		</div>
+		<div class="row3">
+			<div class="col">
+				<h2>Tour DEEPSPACE</h2>
+				<p id="red">This was 2 Year tour in DEEPSPACE<br><br>from North Base.<br><br>with 16 Tourists and 7 Crew members.</p>
+				<div class="btn">
+					<button>Know More</button>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card card9">
+				</div>
+				<div class="card card10">
+				</div>
+				<div class="card card11">
+				</div>
+				<div class="card card12">
+				</div>
+			</div>
+		</div>
+		<div class="row4">
+			<div class="col">
+				<div class="card card13">
+				</div>
+				<div class="card card14">
+				</div>
+				<div class="card card15">
+				</div>
+				<div class="card card16">
+				</div>
+			</div>
+			<div class="col">
+				<h2>Research Tour</h2>
+				<p id="red">4 different Base.<br><br>4 different Team.<br><br>4 different Mission.</p>
+				<div class="btn">
+					<button>Know More</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		{
+			var blur_it = document.getElementById("navbar");
+			var lastscroll = window.screenY;
+			window.addEventListener("scroll", () =>{
+			if (lastscroll<window.scrollY){
+				console.log("lastscroll");
+				blur_it.classList.add("navbar--hidden")
+			}
+			else{
+				blur_it.classList.remove("navbar--hidden")
+			}
+			lastscroll = window.screenY;
+			})
+	}
+	</script>
+</body>
+</html>

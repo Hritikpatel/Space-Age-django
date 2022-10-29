@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'image/tab_logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.style.css' %}">
+	<title>
+		Space Reach
+	</title>
+</head>
+<body>
+	<div class="main">
+		<div class="navbar">
+			<img src="{% static 'image/Space_Age_logo.png' %}" class="logo">
+			<nav>
+				<ul>
+					<li><a href="{% url 'Home' %}" class="home">Home</a></li>
+					<li><a href="{% url 'About' %}" class="about">About</a></li>
+					<li><a href="{% url 'Blog' %}" class="blog">Blog</a></li>
+					<li><a href="{% url 'gallery' %}" class="gallery">Gallery</a></li>
+					<li><a href="{% url 'tour' %}" class="tour">Tour</a></li>
+					<li><a href="{% url 'account' %}" class="account">Account</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="form-box">
+			<form id="user" method="post" class="input-group" action="{% url 'account' %}">
+				Log In
+				<input type="text" class="input-field" name="User Id" placeholder="User ID" required>
+				<input type="password" class="input-field" name="Password" placeholder="Password" required>
+				<button type="submit" class="submit-btn">Log In</button>
+				<a href="{% url 'f_pass' %}" class="f_pass">Forgot Password</a> | 
+				<a href="{% url 'sign_in' %}" class="prob">New Here? Join Us</a> 
+			</form>
+		</div>
+		<div class="links">
+			<a href="#" class="mata">Mataverse</a>
+			<a href="#" class="unreal">Unreal</a>
+			<a href="#" class="deeplink">DeepLink</a>
+		</div>
+	</div>
+</body>
+</html>

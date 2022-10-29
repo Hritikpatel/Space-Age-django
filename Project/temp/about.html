@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% load static %}
+	<link rel="shortcut icon" type="image/png" href="{% static 'image/tab_logo.png' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/about.style.css' %}">
+	<title>
+		About Space Age
+	</title>
+</head>
+<body>
+    <section class="header">
+        <div class="navbar" id="nav">
+			<img src="{% static 'image/Space_Age_logo.png' %}" class="logo">
+			<nav>
+				<ul>
+					<li><a href="{% url 'Home' %}" class="home">Home</a></li>
+					<li><a href="{% url 'About' %}" class="about">About</a></li>
+					<li><a href="{% url 'Blog' %}" class="blog">Blog</a></li>
+					<li><a href="{% url 'gallery' %}" class="gallery">Gallery</a></li>
+					<li><a href="{% url 'tour' %}" class="tour">Tour</a></li>
+					<li><a href="{% url 'account' %}" class="account">Account</a></li>
+				</ul>
+			</nav>
+		</div>
+            <div class="head --center">
+				<h1>About SPACE AGE</h1>
+				<p>We're committed to building a road to space so our children can build the future.</p>
+                <!-- <img src="image/Space_Age_logo.png" alt=""> -->
+            </div>
+			<div class="scrollme">
+                <svg width="30px" height="20px">
+                <path stroke="#ffffff" stroke-width="2px" d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "></path>
+                </svg>
+            </div>
+		<div class="links">
+			<a href="#" class="mata">Mataverse</a>
+			<a href="#" class="unreal">Unreal</a>
+			<a href="#" class="deeplink">DeepLink</a>
+		</div>
+    </section>
+    <section class="sec">
+        <div class="contentsec">
+            <p>Our Vision</p>
+            <h1>For the Benefit of Earth</h1>
+			<p>Space Age was founded with a vision of millions of people living and working in space for the benefit of Earth. Space Age envisions a time when people can tap into the limitless resources of space and enable the movement of damaging industries into space to preserve Earth, humanity’s Space Age.</p>
+            <a href=""><button class="btn">Know More</button></a>
+        </div>
+    </section>
+	<section class="sec --II">
+        <div class="contentsec">
+            <p>Our Mission</p>
+            <h1>Increase Access to Space</h1>
+			<p>Space Age is working today to create that future where all civil, commercial, and defense customers can travel to space. Our efforts include flying everyone to space, developing an orbital launch vehicle, building next-generation space habitats, and finding new habitats.</p>
+            <a href=""><button class="btn">Know More</button></a>
+        </div>
+    </section>
+	<section class="sec --III">
+        <div class="contentsec">
+            <p>Our Foundation</p>
+            <h1>Club for the Future</h1>
+			<p>Founded by Space Age in 2019, Club for the Future is a foundation whose mission is to inspire future generations to pursue careers in STEM and to help invent the future of life in space. The Club and its collaborators are doing this through Postcards to Space, space-focused curriculum, and access to space on Space Age’s rockets.</p>
+            <a href=""><button class="btn">Know More</button></a>
+        </div>
+    </section>
+    <script type="text/javascript">
+		{
+			var blur_it = document.getElementById("nav");
+			var lastscroll = window.screenY;
+			window.addEventListener("scroll", () =>{
+			if (lastscroll<window.scrollY){
+				console.log("lastscroll");
+				blur_it.classList.add("navbar--hidden")
+			}
+			else{
+				blur_it.classList.remove("navbar--hidden")
+			}
+			lastscroll = window.screenY;
+			})
+	}
+	</script>
+</body>
+</html>

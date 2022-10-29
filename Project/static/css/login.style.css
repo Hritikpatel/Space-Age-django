@@ -1,0 +1,141 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+	transition: .5s ease;
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+.main{
+	height: 100vh;
+	width: 100%;
+	background-image: url(../image/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	padding-right: 5%;
+	padding-left: 5%;
+	box-sizing: border-box;
+	position: absolute;
+}
+.navbar{
+	width: 100%;
+	height: 15vh;
+	margin: auto;
+	margin-left: 10px;
+	display: flex;
+	align-items: center;
+}
+.logo{
+	width: 190px;
+	height: 30px;
+	cursor: pointer;
+}
+nav ul{
+	flex: 1;
+	margin-left: 550px;	
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	margin: 0 20px;
+}
+nav ul li a{
+	letter-spacing: 0px;
+	text-decoration: none;
+	color: whitesmoke;
+	font-size: 20px;
+}
+nav ul li a:hover{
+	font-size: 21px;
+	color: darkgrey;
+}
+.account{
+	font-size: 21px;
+	margin-left: 0px;
+	margin-right: 0px;
+	color: darkgrey;
+	text-decoration: underline;
+}
+.links{
+	transform: rotate(-90deg);
+	position: absolute;
+	left: -70px;
+	bottom: 150px;
+	
+}
+.links a{
+	text-decoration: none;
+	color: whitesmoke;
+	padding-right: 20px;
+	font-size: 14px;
+}
+.form-box{
+	height: 480px;
+	width: 380px;
+	margin: 4% 0 0 40%;
+	background: transparent;
+	color: whitesmoke;
+	border-radius: 30px;
+	padding: 5px;
+	overflow: hidden;
+	backdrop-filter: blur(5px);
+	font-size: 22px;
+}
+.form-box:hover{
+	transition: .5s;
+	box-shadow: 0 25px 60px #393040;
+	backdrop-filter: blur(20px);
+}
+form input{
+	color: whitesmoke;
+}
+.input-group{
+	top: 100px;
+	position: absolute;
+	width: 280px;
+	transition: .7s;
+	margin-left: 7vh;
+}
+.input-field{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-top: 0;
+	border-left:0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	background: transparent;
+}
+.submit-btn{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: 40px auto;
+	margin-left: 2vh;
+	background:  #44303C;
+	border-radius: 30px;
+	color: white;
+}
+.prob{
+	color: #999;
+	text-align: center;
+	font-size: 12px;
+}
+a{
+	text-decoration: none;
+	text-align: center;
+	transition: .5s;
+}
+a:hover{
+	color: whitesmoke;
+	transition: .5s;
+}
+.f_pass{	
+	color: #999;
+	text-align: center;
+	font-size: 12px;
+	margin-left: 8%;
+}

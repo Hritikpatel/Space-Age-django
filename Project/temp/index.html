@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Space Age|Home</title>
+        {% load static %}
+        <link rel="shortcut icon" type="image/png" href="{% static 'image/tab_logo.png' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    </head>
+    <body>
+        <section class="header">
+            <div class="navbar" id="nav">
+                <img src="{% static 'image/Space_Age_logo.png' %}" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="/" class="home">Home</a></li>
+                        <li><a href="about/" class="about">About</a></li>
+                        <li><a href="{% url 'Blog' %}" class="blog">Blog</a></li>
+                        <li><a href="gallery/" class="gallery">Gallery</a></li>
+                        <li><a href="tour/" class="tour">Tour</a></li>
+                        <li><a href="account/" class="account">Account</a></li>
+                    </ul>
+                </nav>
+            </div>
+                <div class="contentsec">
+                    <p>New Destination</p>
+                    <h1>X Æ A-XII</h1>
+                    <a href=""><button class="btn">Know More</button></a>
+                    <div class="scrollme">
+                        <svg width="30px" height="20px">
+                        <path stroke="#ffffff" stroke-width="2px" d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "></path>
+                        </svg>
+                    </div>
+                </div>
+            <div class="links">
+                <a href="#" class="mata">Mataverse</a>
+                <a href="#" class="unreal">Unreal</a>
+                <a href="#" class="deeplink">DeepLink</a>
+            </div>
+        </section>
+        <section class="sec">
+            <div class="contentsec">
+                <p>Upcoming Launch</p>
+                <h1>SHEPARD N-23</h1>
+                <a href=""><button class="btn">Know More</button></a>
+                <div class="scrollme">
+                    <svg width="30px" height="20px">
+                    <path stroke="#ffffff" stroke-width="2px" d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "></path>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <section class="sec --II">
+            <div class="contentsec">
+                <p>Update</p>
+                <h1>Star Reef</h1>
+                <a href=""><button class="btn">Know More</button></a>
+                <div class="scrollme">
+                    <svg width="30px" height="20px">
+                    <path stroke="#ffffff" stroke-width="2px" d="M2.000,5.000 L15.000,18.000 L28.000,5.000 "></path>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            {
+                var blur_it = document.getElementById("nav");
+                var lastscroll = window.screenY;
+                window.addEventListener("scroll", () =>{
+                if (lastscroll<window.scrollY){
+                    console.log("lastscroll");
+                    blur_it.classList.add("navbar--hidden")
+                }
+                else{
+                    blur_it.classList.remove("navbar--hidden")
+                }
+                lastscroll = window.screenY;
+                })
+        }
+        </script>
+    </body>
+</html>

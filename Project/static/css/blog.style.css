@@ -1,0 +1,109 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: monospace;
+	scroll-behavior: smooth;
+	transition: .5s cubic-bezier(1, 0.05, 0, 0.99);
+}
+*::-webkit-scrollbar {
+    display: none;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+body{
+	background-color: rgb(18, 18, 18);
+}
+.main{
+	height: 100vh;
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	box-sizing: border-box;
+	position: relative;
+	padding-right: 5%;
+	padding-left: 5%;
+}
+.navbar{
+	width: 100%;
+	height: 15vh;
+	margin: auto;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	display: flex;
+	align-items: center;
+}
+.logo{
+	width: 190px;
+	height: 30px;
+	cursor: pointer;
+}
+nav ul{
+	flex: 1;
+	margin-left: 550px;	
+}
+nav ul li{
+	display: inline-block;
+	list-style: none;
+	margin: 0 20px;
+}
+nav ul li a{
+	letter-spacing: 0px;
+	text-decoration: none;
+	color: whitesmoke;
+	font-size: 20px;
+}
+nav ul li a:hover{
+	font-size: 21px;
+	color:  darkgray;
+	text-decoration: underline;
+}
+.blog{
+	font-size: 21px;
+	margin-left: 0px;
+	margin-right: 0px;
+	color: darkgray;
+	text-decoration: underline;
+}
+.content{
+    background-color: whitesmoke;
+	height: 80%;
+	width: 70%;
+	font-size: 32px;
+    border-radius: 10px;
+    overflow-y: scroll;
+	z-index: 50;
+	margin-left: 15%;
+}
+.article{
+    padding: 5%;
+}
+.body{
+	display: block;
+	width: 100%;
+    font-size: 20px;
+    margin-top: 2vh;
+	line-height: 25px;
+	word-wrap: break-word;
+	white-space: pre-line;
+}
+.writtenby{
+	margin-top: 7px;
+	font-size: 12px;
+}
+.up{
+	position: fixed;
+	background-color: whitesmoke;
+	background-image: url(../image/back.png);
+	width: 4%;
+	height: 8%;
+	left: 92%;
+	top: 85%;
+	border-radius: 50%;
+	z-index: 1;
+}
+.up:hover{
+	border: 200px;
+	transition: .4s;
+}
