@@ -13,9 +13,9 @@ def mail():
     smtp_server = "smtp.gmail.com"  # Google SMTP Server
 
     email_from = "spaceage.customer.service@gmail.com"
-    email_to = "hritikpatel1st@gmail.com"
+    email_to = "dummy@gmail.com"
 
-    pswd = "frlgqyzzqylehkjr"
+    pswd = "frlgqyzzqdddsaxcehkjr"
 
     # content of message
 
