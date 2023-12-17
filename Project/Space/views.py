@@ -12,7 +12,7 @@ def mail():
     smtp_port = 587                 # Standard secure SMTP port
     smtp_server = "smtp.gmail.com"  # Google SMTP Server
 
-    email_from = "spaceage.customer.service@gmail.com"
+    email_from = "customer.service@gmail.com"
     email_to = "dummy@gmail.com"
 
     pswd = "frlgqyzzqdddsaxcehkjr"
