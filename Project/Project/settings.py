@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1y^g0vd2og9b0*1m99jizv!xxk=v^%!43i%m59dr7^axvtpd34
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["space-age.hritik.site"]
 
 
 # Application definition
