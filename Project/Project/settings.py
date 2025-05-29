@@ -128,6 +128,16 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
+# URL to use when referring to static files (e.g., in templates)
+STATIC_URL = '/static/'
+
+# Where your static files will be collected (for production)
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # Optional, used mostly in production
+
+# Additional locations for static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
 
 EMAILHOST = "smtp-gmail.com"
 EMAIL_PORT = 587
